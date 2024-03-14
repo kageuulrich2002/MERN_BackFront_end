@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+          "@/*": ["./*"]
+        },
+      "target": "es5",                   // Définissez la version cible ECMAScript (ajustez selon vos besoins)
+      "lib": ["dom", "dom.iterable", "esnext"], // Fichiers de la bibliothèque standard
+      "allowJs": true,                   // Autoriser la compilation de fichiers JavaScript
+      "skipLibCheck": true,               // Ignorer la vérification de type pour les bibliothèques externes (facultatif)
+      "strict": true,                    // Activer la vérification de type stricte
+      "esModuleInterop": true,           // Activer l'interopérabilité des modules ES
+      "allowSyntheticDefaultImports": true, // Autoriser les importations par défaut synthétiques (facultatif)
+      "forceConsistentCasingInFileNames": true // Garantir une casse cohérente pour les noms de fichiers
+    },
+    "include": ["src"]                   // Spécifier les fichiers et dossiers à compiler (ajustez selon vos besoins)
+  }
