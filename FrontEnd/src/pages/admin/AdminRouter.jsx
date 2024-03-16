@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import LayoutAdm from "./LayoutAdm";
 import Dashbord from "./Dashbord";
-import Error404 from "../../_utils/Error";
+import Error404 from "../../utils/Error";
 import User from "./user/User";
 import UserAdd from "./user/UserAdd";
 import UserEdit from "./user/UserEdit";
@@ -13,6 +13,7 @@ export default function AdminRouter  (){
         <>
             <Routes>
                 <Route element={<LayoutAdm />}>{/*acces au enfant : /admin/enfant*/}
+                <Route index element={<Dashbord />} />
                     <Route path="dashboard" element={<Dashbord />} />
                         <Route path="user">
                             <Route path="index" element={<User/>}/>

@@ -3,7 +3,7 @@ import LayoutPub from "./LayoutPub";
 import Home from "./Home";
 import Service from "./Service";
 import Contact from "./Contact";
-import Error404 from "../../_utils/Error";
+import Error404 from "../../utils/Error";
 
 export default function PublicRouter() {
     return <>

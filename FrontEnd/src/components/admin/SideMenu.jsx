@@ -12,15 +12,15 @@ export default function SideMenu(){
                 <li>
                     User
                         <ul className='ml-4 '>
-                            <li className='hover:bg-orange-100'><NavLink to='/admin/user/index'>Liste</NavLink></li>
-                            <li className='hover:bg-orange-100'><NavLink to='/admin/user/add'>Ajouter</NavLink></li>
+                            <li className='hover:bg-orange-100 rounded-full'><NavLink to='/admin/user/index' className="ml-3">Liste</NavLink></li>
+                            <li className='hover:bg-orange-100 rounded-full'><NavLink to='/admin/user/add' className="ml-3">Ajouter</NavLink></li>
                         </ul>
                 </li>
                 <li>
                     Cocktail
-                        <ul className='ml-4'>
-                            <li className=' hover:bg-green-100'><NavLink to='/admin/cocktail/index'>Liste</NavLink></li>
-                            <li className=' hover:bg-green-100'><NavLink to='/admin/cocktail/edit'>Editer</NavLink></li>
+                        <ul className='ml-4 '>
+                            <li className=' hover:bg-green-100 rounded-full'><NavLink to='/admin/cocktail/index' className="ml-3">Liste</NavLink></li>
+                            <li className=' hover:bg-green-100 rounded-full'><NavLink to='/admin/cocktail/edit' className="ml-3">Editer</NavLink></li>
                         </ul>
                 </li>
 
