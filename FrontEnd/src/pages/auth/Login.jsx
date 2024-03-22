@@ -1,11 +1,24 @@
 import {useState} from 'react'
+import { useNavigate } from 'react-router-dom' //routage programatique routage vers la code
+import { accoutService } from '../../services/account.service'
+
+
+
+
+
 export default function Login (){
+
+    let navigate = useNavigate() //pour l'utiliser on le declare toujours dans une variable
+
+    // function retounAcceuil(){
+    //     Navigate('/')
+    // }
 
     // const [login, setLogin] =useState('')
     // const [password , setPassword] = useState('')
     const [credential, setCredential] = useState({ // recupere tout les name des different imput
-        login: '',
-        password: ''
+        login: 'seigneur',
+        password: 'bible'
     }) 
 
     const onChange =(e) =>{ //gere les diff etat de changement 
@@ -18,6 +31,16 @@ export default function Login (){
     const onSubmit = (e) =>{ //declanche tout le formulaire
         e.preventDefault()//empeche le chargement de la page
         console.log(credential)
+
+        //appelle de API par "api.service" | "account.service.js"
+            accoutService.login(credential)
+                .then(res => {
+                    accoutService.saveToken('token', res.data.token)
+                    // console.log(accoutService.saveToken('token', res.data.token));
+                    navigate('/admin')
+                    })
+                .catch(error => console.log(error))
+    
     }
     return (
         <div>
@@ -53,9 +76,10 @@ export default function Login (){
                 
             </form>
             <p className="text-center text-gray-500 text-xs">
-                &copy;2024 catechdigital2024. the cameroon.
+                &copy;2024 catechdigital2024@gmail.com  .|the cameroon.
             </p>
             </div>
+        
         </div>
     );
 }

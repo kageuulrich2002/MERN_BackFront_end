@@ -1,4 +1,39 @@
+const jwt = require('jsonwebtoken'); // appelle du token
+
 const admins = require('../models/adminModel')
+
+//Connexion au Admin (authentification)
+const endPoint =async (req, res) => {
+    const { login , password } = req.body;
+  
+    // Récupérer l'utilisateur de la base de données
+    const user = await admins.findOne({ login });
+  
+    if (!user) {
+      return res.status(401).json({ message: 'Utilisateur introuvable' });
+    }
+   
+    // Vérifier le mot de passe
+    // const isValidPassword = await compare(password, user.password);
+  
+    if (password != user.password) {
+      return res.status(401).json({ message: 'Mot de passe incorrect' });
+    }
+
+    // Si le login et le mot de passe sont valides, générer un token
+    const secretKey = 'token'; // Clé secrète pour signer le token
+    const payload = {
+        userId: user._id, // Vous pouvez inclure d'autres données si nécessaire
+        };
+    const options = {
+        expiresIn: '1h', // Le token expirera après 1 heure
+        };
+    const token = jwt.sign(payload, secretKey, options);
+
+    // Envoi de la réponse avec le token
+    res.status(200).json({ token });
+  }
+
 
 // Affiche  tous les admin
 const getAllAdmin = async (req, res) => {
@@ -71,6 +106,7 @@ const deleteAdmin = async (req, res) =>{
 }
 
 module.exports ={
+    endPoint,
     getAllAdmin,
     getAdmin,
     createAdmin,

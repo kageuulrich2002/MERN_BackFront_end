@@ -45,3 +45,8 @@
 .area {
  font-family:'Courier New', Courier, monospace;
 }
+
+.leftkud{
+  margin-top: 5px;
+  float: right;
+}

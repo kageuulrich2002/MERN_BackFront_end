@@ -5,6 +5,7 @@ const {  connectDB } = require('./models//dB'); //aplle de la BD.
 const  usersRoute = require('./routes/userRoute') // api user
 const  platRoute = require('./routes/platRoute') //api plat
 const  adminRouter = require('./routes/adminRouter') //api admin
+var cors = require("cors");  //secoudre les pb appelle d'Api.
 
 //variable du server
 const app = express()
@@ -17,6 +18,7 @@ app.use((req, res, next) =>{
     next()
 })
 app.use(express.json()) // pour lire les doc Json.
+app.use(cors());  // activation des cors pour toutes les requêtes 
 
 //appelle de nos different routes.
 app.use('/users', usersRoute)
