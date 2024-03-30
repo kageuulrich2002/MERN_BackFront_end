@@ -19,8 +19,8 @@ export default function SideMenu(){
                 <li>
                     Cocktail
                         <ul className='ml-4 '>
-                            <li className=' hover:bg-green-100 rounded-full'><NavLink to='/admin/cocktail/index' className="ml-3">Liste</NavLink></li>
-                            <li className=' hover:bg-green-100 rounded-full'><NavLink to='/admin/cocktail/edit' className="ml-3">Editer</NavLink></li>
+                            <li className=' hover:bg-green-100 rounded-full'><NavLink to='/admin/plat/index' className="ml-3">Liste</NavLink></li>
+                            <li className=' hover:bg-green-100 rounded-full'><NavLink to='/admin/plat/add' className="ml-3">Add</NavLink></li>
                         </ul>
                 </li>
 

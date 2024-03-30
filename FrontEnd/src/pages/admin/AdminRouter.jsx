@@ -5,8 +5,8 @@ import Error404 from "../../utils/Error";
 import User from "./user/User";
 import UserAdd from "./user/UserAdd";
 import UserEdit from "./user/UserEdit";
-import Cocktail from "./cocktail/Cocktail";
-import CocktailEdit from "./cocktail/CocktailEdit";
+import Plat from "./plat/Plat";
+import PlatAdd from "./plat/PlatAdd";
 
 export default function AdminRouter  (){
     return (
@@ -21,9 +21,9 @@ export default function AdminRouter  (){
                             <Route path="add" element={<UserAdd/>}/>
                         </Route>
 
-                        <Route path="cocktail">
-                            <Route path="index" element={<Cocktail/>}/>
-                            <Route path="edit" element={<CocktailEdit/>}/>
+                        <Route path="plat">
+                            <Route path="index" element={<Plat/>}/>
+                            <Route path="add" element={<PlatAdd/>}/>
                         </Route>
                 </Route>
                 <Route path="*" element={<Error404 />} />

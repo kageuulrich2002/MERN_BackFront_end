@@ -23,6 +23,10 @@ function isLogged (){ // Metho pour savoir si on n'est logged ou pas
 
 }
 
+let getToken = () =>{ //lire le token envoyé par le backend (return le Token)
+  return localStorage.getItem('token')
+}
+
 export const accoutService = {
-    login, saveToken , logout , isLogged
+    login, saveToken , logout , isLogged , getToken
 }

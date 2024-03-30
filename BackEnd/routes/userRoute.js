@@ -8,6 +8,6 @@ router.get('/:id',getone) // affiche un user par id bd "http://localhost:3000/us
 router.post('/',createUser) // cree user dans bd "http://localhost:3000/users/"
 router.put('/:id',updateUser) // modifie user dans la bd "http://localhost:3000/users/:id"
 router.delete('/:id',deleteUser) // suprime id la bd "http://localhost:3000/users/:id"
-
+ 
 //Export de "const router".
 module.exports = router
